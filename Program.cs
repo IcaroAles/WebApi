@@ -7,6 +7,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<CpfServices>(p =>
+{
+    int seed = DateTime.Now>millisecond;
+    CpfServices service = new CpfServices();
+    return service;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 public class CpfController : ControllerBase
 {
    [HttpGet("validate/cpf")]
-   public object Validate (string cpf)
+   public object Validate (
+       [FromServices]CpfServices CpfService,
+       string cpf)
    {
        throw new NotImplementException();
    }
