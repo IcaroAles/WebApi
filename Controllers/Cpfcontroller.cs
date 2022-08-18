@@ -9,12 +9,12 @@ public class CpfController : ControllerBase
        [FromServices]CpfServices CpfService,
        string cpf)
    {
-       throw new NotImplementException();
+       throw new NotImplementedException();
    }
 
    [HttpGet("generate")]
    public object Generate()
    {
-       throw new NotImplementException();
+       throw new NotImplementedException();
    }
 }

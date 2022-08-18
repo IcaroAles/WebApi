@@ -14,6 +14,13 @@ builder.Services.AddSingleton<CpfServices>(p =>
     return service;
 });
 
+builder.Services.AddSingleton<CEPService>(p =>
+{
+    string baseUrl = 
+    CEPService service = new CEPService(baseUrl);
+    return Service;
+}
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
