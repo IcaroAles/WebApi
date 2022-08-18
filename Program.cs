@@ -7,19 +7,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<CpfServices>(p =>
+builder.Services.AddSingleton<CpfService>(p =>
 {
-    int seed = DateTime.Now>millisecond;
-    CpfServices service = new CpfServices();
+    int seed = DateTime.Now.Millisecond;
+    CpfService service = new CpfService(seed);
     return service;
 });
 
 builder.Services.AddSingleton<CEPService>(p =>
 {
-    string baseUrl = 
+    string baseUrl = "https://viacep.com.br/ws/{cep}/json/";
     CEPService service = new CEPService(baseUrl);
-    return Service;
-}
+    return service;
+});
 
 var app = builder.Build();
 
@@ -36,4 +36,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run()
